@@ -1,0 +1,98 @@
+#body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    color: black;
+}
+
+#container {
+    background-color: black;
+    width: 60%;
+    border-radius: 30px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:    " display display display display"
+                            "clear clear delete delete"
+                            "7 8 9 division"
+                            "4 5 6 multiplication"
+                            "1 2 3 subtraction"
+                            "dot 0 sum addition"
+}
+
+#container > * {
+    background-color: rgb(236, 219, 186);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#display {
+     grid-area: display;
+
+}
+
+#clear {
+    grid-area: clear;
+    background-color: rgb(200, 75, 49);
+}
+
+#delete {
+    grid-area: delete;
+    background-color: rgb(52, 103, 81);
+}
+
+#7 {
+    grid-area: 7;
+}
+#8 {
+    grid-area: 8;
+}
+#9 {
+    grid-area: 9;
+}
+#7 {
+    grid-area: 7;
+}
+#division {
+    grid-area: division;
+}
+#4 {
+    grid-area: 4;
+}
+#5 {
+    grid-area: 5;
+}
+#6 {
+    grid-area: 6;
+}
+#multiplication {
+    grid-area: multiplication;
+}
+#1 {
+    grid-area: 1;
+}
+#2 {
+    grid-area: 2;
+}
+#3 {
+    grid-area: 3;
+}
+#subtraction {
+    grid-area: subtraction;
+}
+#dot {
+    grid-area: dot;
+}
+#0 {
+    grid-area: 0;
+}
+#sum {
+    grid-area: sum;
+    background-color: rgb(200, 75, 49);
+}
+#addition {
+    grid-area: addition;
+}
