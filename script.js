@@ -80,7 +80,13 @@ function operation(clicked) {
 }
 
 function division() {
-
-
+    if (displayValue === "0") {
+        document.getElementById("display").innerText = "ERROR: DON'T DIVIDE BY 0!"
+        return;
+    }
+    let numberB = Number.parseInt(displayValue);
+    let outcome = numberA / numberB;
+    displayValue = outcome;
+    document.getElementById("display").innerText = displayValue;
 
 }
