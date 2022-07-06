@@ -79,10 +79,10 @@ function operation(clicked) {
         } else if (operationToCompute === "subtraction") {
             subtraction();
         } else if (operationToCompute === "addition") {
-            multiplication();
+            addition();
         } else { console.log("errorA") }
     } else {
-        displayValue = "errorB";
+        console.log("errorB");
     }
 }
 
@@ -109,6 +109,14 @@ function multiplication() {
 function subtraction() {
     let numberB = Number.parseInt(displayValue);
     let outcome = numberA - numberB;
+    displayValue = outcome;
+    document.getElementById("display").innerText = displayValue;
+    operationToCompute = "";
+}
+
+function addition() {
+    let numberB = Number.parseInt(displayValue);
+    let outcome = numberA + numberB;
     displayValue = outcome;
     document.getElementById("display").innerText = displayValue;
     operationToCompute = "";
