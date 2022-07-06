@@ -81,6 +81,9 @@ function operation(clicked) {
         operationToCompute = "addition";
         displayValue = "0";
     } else if (clicked === "dot") {
+        if (displayValue.includes(".")) {
+            return;
+        }
         display(".");
     } else if (clicked === "sum") {
         sum();
@@ -138,3 +141,8 @@ function addition() {
     document.getElementById("display").innerText = displayValue;
     operationToCompute = "";
 }
+
+//Users can get floating point numbers if they do the math required to get one, but they can’t type them in yet. Add a . button and let users input decimals! Make sure you don’t let them type more than one though: 12.3.56.5. It is hard to do math on these numbers. (disable the decimal button if there’s already one in the display)
+//Add keyboard support!
+//12.3.56.5.
+//You should round answers with long decimals so that they don’t overflow the screen.
