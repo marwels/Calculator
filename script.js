@@ -1,4 +1,5 @@
-let displayValue = 0;
+let displayValue = "0";
+document.getElementById("display").innerText = displayValue;
 
 function addListeners() {
     document.querySelectorAll("button").forEach(item => {
@@ -19,6 +20,18 @@ function addListeners() {
 addListeners();
 
 function display(clicked) {
-    document.getElementById("display").innerText += clicked;
+    if (document.getElementById("display").innerText === "0") {
+        document.getElementById("display").innerText = clicked;
+        displayValue = clicked;
+        return;
+    } else {
+        displayValue += clicked;
+        document.getElementById("display").innerText = displayValue;
+    }
 }
 
+function operation(clicked) {
+    let numberA = Number.parseInt(displayValue);
+    //let toCompute = numberA +
+
+}
