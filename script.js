@@ -48,7 +48,7 @@ function operation(clicked) {
             displayValue = "0";
             document.getElementById("display").innerText = displayValue;
         } else {
-            let sliced = displayValue.slice(0, -1);
+            let sliced = displayValue.slice(0, -1); //check later 
             displayValue = sliced;
             document.getElementById("display").innerText = displayValue;
         }
@@ -71,20 +71,24 @@ function operation(clicked) {
     } else if (clicked === "dot") {
         display(".");
     } else if (clicked === "sum") {
-        if (operationToCompute === "") {
-            return;
-        } else if (operationToCompute === "division") {
-            division();
-        } else if (operationToCompute === "multiplication") {
-            multiplication();
-        } else if (operationToCompute === "subtraction") {
-            subtraction();
-        } else if (operationToCompute === "addition") {
-            addition();
-        } else { console.log("errorA") }
+        sum();
     } else {
         console.log("errorB");
     }
+}
+
+function sum() {
+    if (operationToCompute === "") {
+        return;
+    } else if (operationToCompute === "division") {
+        division();
+    } else if (operationToCompute === "multiplication") {
+        multiplication();
+    } else if (operationToCompute === "subtraction") {
+        subtraction();
+    } else if (operationToCompute === "addition") {
+        addition();
+    } else { console.log("errorA") }
 }
 
 function division() {
