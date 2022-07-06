@@ -105,3 +105,11 @@ function multiplication() {
     document.getElementById("display").innerText = displayValue;
     operationToCompute = "";
 }
+
+function subtraction() {
+    let numberB = Number.parseInt(displayValue);
+    let outcome = numberA - numberB;
+    displayValue = outcome;
+    document.getElementById("display").innerText = displayValue;
+    operationToCompute = "";
+}
