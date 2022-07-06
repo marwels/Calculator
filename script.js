@@ -53,18 +53,30 @@ function operation(clicked) {
             document.getElementById("display").innerText = displayValue;
         }
     } else if (clicked === "division") {
+        if (numberA != 0) {
+            sum();
+        }
         numberA = Number(displayValue);
         operationToCompute = "division";
         displayValue = "0";
     } else if (clicked === "multiplication") {
+        if (numberA != 0) {
+            sum();
+        }
         numberA = Number(displayValue);
         operationToCompute = "multiplication";
         displayValue = "0";
     } else if (clicked === "subtraction") {
+        if (numberA != 0) {
+            sum();
+        }
         numberA = Number(displayValue);
         operationToCompute = "subtraction";
         displayValue = "0";
     } else if (clicked === "addition") {
+        if (numberA != 0) {
+            sum();
+        }
         numberA = Number(displayValue);
         operationToCompute = "addition";
         displayValue = "0";
