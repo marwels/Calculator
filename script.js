@@ -39,6 +39,7 @@ function operation(clicked) {
     if (clicked === "clear") {
         displayValue = "0";
         numberA = 0;
+        operationToCompute = "";
         document.getElementById("display").innerText = displayValue;
     } else if (clicked === "delete") {
         if (displayValue === "0") {
@@ -69,15 +70,15 @@ function operation(clicked) {
         displayValue = "0";
     } else if (clicked === "dot") {
     } else if (clicked === "sum") {
-        if (operationToCompute = "") {
+        if (operationToCompute === "") {
             return;
-        } else if (operationToCompute = "division") {
+        } else if (operationToCompute === "division") {
             division();
-        } else if (operationToCompute = "multiplication") {
+        } else if (operationToCompute === "multiplication") {
             multiplication();
-        } else if (operationToCompute = "subtraction") {
+        } else if (operationToCompute === "subtraction") {
             subtraction();
-        } else if (operationToCompute = "addition") {
+        } else if (operationToCompute === "addition") {
             multiplication();
         } else { console.log("errorA") }
     } else {
