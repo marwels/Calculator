@@ -41,9 +41,16 @@ function operation(clicked) {
         numberA = 0;
         document.getElementById("display").innerText = displayValue;
     } else if (clicked === "delete") {
-        let sliced = displayValue.slice(0, -1);
-        displayValue = sliced;
-        document.getElementById("display").innerText = displayValue;
+        if (displayValue === "0") {
+            return;
+        } if (displayValue.length === 1) {
+            displayValue = "0";
+            document.getElementById("display").innerText = displayValue;
+        } else {
+            let sliced = displayValue.slice(0, -1);
+            displayValue = sliced;
+            document.getElementById("display").innerText = displayValue;
+        }
     } else if (clicked === "division") {
         numberA = Number.parseInt(displayValue);
         operationToCompute = "division";
@@ -76,7 +83,6 @@ function operation(clicked) {
     } else {
         displayValue = "errorB";
     }
-
 }
 
 function division() {
@@ -88,5 +94,13 @@ function division() {
     let outcome = numberA / numberB;
     displayValue = outcome;
     document.getElementById("display").innerText = displayValue;
+    operationToCompute = "";
+}
 
+function multiplication() {
+    let numberB = Number.parseInt(displayValue);
+    let outcome = numberA * numberB;
+    displayValue = outcome;
+    document.getElementById("display").innerText = displayValue;
+    operationToCompute = "";
 }
