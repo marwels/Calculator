@@ -1,4 +1,7 @@
 let displayValue = "0";
+let numberA = 0;
+let operationToCompute = "";
+
 document.getElementById("display").innerText = displayValue;
 
 function addListeners() {
@@ -21,7 +24,7 @@ function addListeners() {
 addListeners();
 
 function display(clicked) {
-    if (document.getElementById("display").innerText === "0") {
+    if (displayValue === "0") {
         document.getElementById("display").innerText = clicked;
         displayValue = clicked;
         return;
@@ -32,7 +35,7 @@ function display(clicked) {
 }
 
 function operation(clicked) {
-    let numberA = Number.parseInt(displayValue);
+
     if (clicked === "clear") {
         displayValue = "0";
         document.getElementById("display").innerText = displayValue;
@@ -41,13 +44,31 @@ function operation(clicked) {
         displayValue = sliced;
         document.getElementById("display").innerText = displayValue;
     } else if (clicked === "division") {
+        numberA = Number.parseInt(displayValue);
+        operationToCompute = "division";
+        displayValue = "0";
     } else if (clicked === "multiplication") {
+        numberA = Number.parseInt(displayValue);
+        operationToCompute = "multiplication";
+        displayValue = "0";
     } else if (clicked === "subtraction") {
+        numberA = Number.parseInt(displayValue);
+        operationToCompute = "subtraction";
+        displayValue = "0";
     } else if (clicked === "addition") {
+        numberA = Number.parseInt(displayValue);
+        operationToCompute = "addition";
+        displayValue = "0";
     } else if (clicked === "dot") {
     } else if (clicked === "sum") {
     } else {
         displayValue = "error";
     }
+
+}
+
+function division() {
+    let numberA = Number.parseInt(displayValue);
+
 
 }
