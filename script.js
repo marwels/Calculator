@@ -10,7 +10,8 @@ function addListeners() {
                 // return Number.parseInt(item.getAttribute('data-digit'));
             } else if (item.hasAttribute('data-op')) {
                 console.log("data-op exists");
-                return item.getAttribute('data-op');
+                operation(item.getAttribute('data-op'));
+                //return item.getAttribute('data-op');
             }
         })
     }
@@ -32,17 +33,18 @@ function display(clicked) {
 
 function operation(clicked) {
     let numberA = Number.parseInt(displayValue);
-    if (item.getAttribute('data-op') === "clear") {
+    if (clicked === "clear") {
         displayValue = "0";
-    } else if (item.getAttribute('data-op') === "delete") {
+        document.getElementById("display").innerText = displayValue;
+    } else if (clicked === "delete") {
         let sliced = displayValue.slice(0, -1);
         displayValue = sliced;
-    } else if (item.getAttribute('data-op') === "division") {
-    } else if (item.getAttribute('data-op') === "multiplication") {
-    } else if (item.getAttribute('data-op') === "subtraction") {
-    } else if (item.getAttribute('data-op') === "addition") {
-    } else if (item.getAttribute('data-op') === "dot") {
-    } else if (item.getAttribute('data-op') === "sum") {
+    } else if (clicked === "division") {
+    } else if (clicked === "multiplication") {
+    } else if (clicked === "subtraction") {
+    } else if (clicked === "addition") {
+    } else if (clicked === "dot") {
+    } else if (clicked === "sum") {
     } else {
         displayValue = "error";
     }
