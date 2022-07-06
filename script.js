@@ -39,6 +39,7 @@ function operation(clicked) {
     } else if (clicked === "delete") {
         let sliced = displayValue.slice(0, -1);
         displayValue = sliced;
+        document.getElementById("display").innerText = displayValue;
     } else if (clicked === "division") {
     } else if (clicked === "multiplication") {
     } else if (clicked === "subtraction") {
