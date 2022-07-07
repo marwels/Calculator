@@ -27,9 +27,11 @@ function display(clicked) {
     if (displayValue === "0") {
         document.getElementById("display").innerText = clicked;
         displayValue = clicked;
+        round();
         return;
     } else {
         displayValue += clicked;
+        round();
         document.getElementById("display").innerText = displayValue;
     }
 }
@@ -114,6 +116,7 @@ function division() {
     let numberB = Number(displayValue);
     let outcome = numberA / numberB;
     displayValue = outcome;
+    round();
     document.getElementById("display").innerText = displayValue;
     operationToCompute = "";
 }
@@ -122,6 +125,7 @@ function multiplication() {
     let numberB = Number(displayValue);
     let outcome = numberA * numberB;
     displayValue = outcome;
+    round();
     document.getElementById("display").innerText = displayValue;
     operationToCompute = "";
 }
@@ -130,6 +134,7 @@ function subtraction() {
     let numberB = Number(displayValue);
     let outcome = numberA - numberB;
     displayValue = outcome;
+    round();
     document.getElementById("display").innerText = displayValue;
     operationToCompute = "";
 }
@@ -138,10 +143,19 @@ function addition() {
     let numberB = Number(displayValue);
     let outcome = numberA + numberB;
     displayValue = outcome;
+    round();
     document.getElementById("display").innerText = displayValue;
     operationToCompute = "";
 }
 
-
+function round() {
+    if ((String(displayValue)).length >= 12) {
+        if (displayValue.includes(".")) {
+            let rounded = Math.round(Number(displayValue) * 10000000000) / 10000000000;
+            displayValue = rounded;
+        } else {
+            displayValue = "ERROR";
+        }
+    }
+}
 //Add keyboard support!
-//You should round answers with long decimals so that they don’t overflow the screen.
