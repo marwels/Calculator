@@ -180,6 +180,8 @@ document.addEventListener("keydown", function (event) {
         operation("delete");
     } else if (event.key === "Enter" || event.key === "=") {
         sum();
+    } else if (event.key === ".") {
+        operation("dot");
     }
 
 })
