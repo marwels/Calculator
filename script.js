@@ -158,4 +158,29 @@ function round() {
         }
     }
 }
-//Add keyboard support!
+
+// keyboard support
+document.addEventListener("keydown", function (event) {
+    console.log(event.key);
+    const allowed = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    if (allowed.includes(event.key)) {
+        let eventKey = event.key;
+        display(eventKey);
+    } else if (event.key === "+") {
+        operation("addition");
+    } else if (event.key === "-") {
+        operation("subtraction");
+    } else if (event.key === "*") {
+        operation("multiplication");
+    } else if (event.key === "/") {
+        operation("division");
+    } else if (event.key === "clear") {
+        operation("delete");
+    } else if (event.key === "Backspace") {
+        operation("delete");
+    } else if (event.key === "Enter" || event.key === "=") {
+        sum();
+    }
+
+})
+
